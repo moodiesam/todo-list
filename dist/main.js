@@ -1,0 +1,1 @@
+(()=>{"use strict";let t=new class{constructor(t,e){this.title=t,this.dueDate=e}}("Build","Tomorrow");console.log({newProject:t})})();
