@@ -2,9 +2,19 @@
 
 //to use we run FILE.thingAsWrittenInFile
 
-import project from './list-creation';
+import createPage from './pages/home';
+import projects from './project-creation';
 
+createPage.makePage;
 
-let newProject = new project.Project('Build', 'Tomorrow');
+const createNewProject = document.getElementById('createProject');
 
-console.log({newProject});
+createNewProject.addEventListener('click', write);
+
+function write() {
+    
+    projects.Projects.addProjectToLibrary();
+    console.log(projects.Projects.projectLibrary);
+    document.getElementById('newProjectForm').reset();
+}
+
