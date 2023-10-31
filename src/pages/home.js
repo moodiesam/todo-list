@@ -1,4 +1,7 @@
 const makePage = (() => {
+
+    //input fields to create Project
+
     const content = document.getElementById('content');
     const newProjectForm = document.createElement('form');
     const titleLabel = document.createElement('label');
@@ -33,6 +36,52 @@ const makePage = (() => {
     newProjectForm.appendChild(submitProjectBtn);
 
     content.appendChild(newProjectForm);
+
+    //input fields to create to do task
+    
+    const newToDoForm = document.createElement('form');
+    const toDoTitleLabel = document.createElement('label');
+    const toDoTitleInput = document.createElement('input');
+    const projectSelectionLabel = document.createElement('label');
+    const projectSelections = document.createElement('select');
+    const projectOption1 = document.createElement('option');
+    const projectOption2 = document.createElement('option');
+    const submitToDoBtn = document.createElement('button');
+
+    newToDoForm.setAttribute('id', 'newToDoForm');
+
+    toDoTitleLabel.setAttribute('for', 'toDo-title');
+    toDoTitleLabel.innerHTML = 'To-Do Title';
+    newToDoForm.appendChild(toDoTitleLabel);
+
+    toDoTitleInput.setAttribute('type', 'text');
+    toDoTitleInput.setAttribute('id', 'toDo-title');
+    toDoTitleInput.setAttribute('name', 'toDo-title');
+    newToDoForm.appendChild(toDoTitleInput);
+
+    projectSelectionLabel.setAttribute('for', 'project-options');
+    projectSelectionLabel.innerHTML = 'Select a Project:';
+    newToDoForm.appendChild(projectSelectionLabel);
+
+    projectSelections.setAttribute('id', 'project-options');
+    projectSelections.setAttribute('name', 'project-options');
+    newToDoForm.appendChild(projectSelections);
+
+    projectOption1.setAttribute('value', '0');
+    projectOption1.innerHTML = 'Project 1';
+    projectSelections.appendChild(projectOption1);
+
+    projectOption2.setAttribute('value', '1');
+    projectOption2.innerHTML = 'Project 2';
+    projectSelections.appendChild(projectOption2);
+
+    submitToDoBtn.setAttribute('type', 'button');
+    submitToDoBtn.innerHTML = 'Create new To-Do';
+    submitToDoBtn.setAttribute('id', 'createToDo');
+    newToDoForm.appendChild(submitToDoBtn);
+
+    content.appendChild(newToDoForm);
+
 
 })();
 

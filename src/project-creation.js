@@ -1,15 +1,17 @@
 // create project object
-    //incudes title, date due, to-do titles
+    //incudes title, date due, to-do array
 
 
 const Projects = (() => {
     const projectLibrary = [];
+    let activeProject = projectLibrary[0];
     
 
     class Project {
         constructor(title, dueDate){
             this.title = document.getElementById('project-title').value;
             this.dueDate = document.getElementById('project-dueDate').value;
+            this.toDoList = [];
         }  
     };
 
@@ -18,18 +20,12 @@ const Projects = (() => {
         projectLibrary.push(newProject);
     }
 
-    let counter = 0;
-
-    const addOne = () => {
-        counter += 1;
-        console.log(counter);
-    }
-
     return { projectLibrary, 
-        addOne,
         addProjectToLibrary,
-        counter };
+        activeProject
+        };
 })();
 
 
 export default {Projects}
+
