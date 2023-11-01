@@ -2,13 +2,16 @@
 
 //to use we run FILE.thingAsWrittenInFile
 
-import createPage from './pages/home';
+import homePage from './pages/home';
+import createForms from './pages/forms';
 import projects from './project-creation';
 import toDos from './todo-creation';
 
 import './style.css';
 
-createPage.makePage;
+homePage.HomePage;
+createForms.makeProjectForm;
+createForms.makeToDoForm();
 
 const createNewProject = document.getElementById('createProject');
 const createNewToDo = document.getElementById('createToDo');
@@ -20,7 +23,9 @@ function writeProject() {
     projects.Projects.addProjectToLibrary();
     console.log(projects.Projects.projectLibrary);
     document.getElementById('newProjectForm').reset();
-    
+    //remove to do form and rewrite with new project as option
+    createForms.removeToDoForm();
+    createForms.makeToDoForm();
 }
 
 function writeToDo() {

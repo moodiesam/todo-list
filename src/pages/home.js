@@ -1,88 +1,30 @@
-const makePage = (() => {
+import Forms from './forms';
 
-    //input fields to create Project
+const HomePage = (() => {
+    //four divs for projects, tasks, project banner, task display
 
     const content = document.getElementById('content');
-    const newProjectForm = document.createElement('form');
-    const titleLabel = document.createElement('label');
-    const titleInput = document.createElement('input');
-    const dueDateLabel = document.createElement('label');
-    const dueDateInput = document.createElement('input');
-    const submitProjectBtn = document.createElement('button');
+    const projectLibrary = document.createElement('div');
+    const projectBanner = document.createElement('div');
+    const toDoLibrary = document.createElement('div');
+    const toDoDisplay = document.createElement('div');
 
-    newProjectForm.setAttribute('id', 'newProjectForm');
+    projectLibrary.setAttribute('id', 'projectLibrary');
+    projectLibrary.classList.add('projectLibrary');
+    content.appendChild(projectLibrary);
 
-    titleLabel.setAttribute('for', 'project-title')
-    titleLabel.innerHTML = 'Project Title';
-    newProjectForm.appendChild(titleLabel);
+    projectBanner.setAttribute('id', 'projectBanner');
+    projectBanner.classList.add('projectBanner');
+    content.appendChild(projectBanner);
 
-    titleInput.setAttribute('type', 'text');
-    titleInput.setAttribute('id', 'project-title');
-    titleInput.setAttribute('name', 'project-title');
-    newProjectForm.appendChild(titleInput);
+    toDoLibrary.setAttribute('id', 'toDoLibrary');
+    toDoLibrary.classList.add('toDoLibrary');
+    content.appendChild(toDoLibrary);
 
-    dueDateLabel.setAttribute('for', 'project-dueDate')
-    dueDateLabel.innerHTML = 'Project Due Date';
-    newProjectForm.appendChild(dueDateLabel);
-
-    dueDateInput.setAttribute('type', 'text');
-    dueDateInput.setAttribute('id', 'project-dueDate');
-    dueDateInput.setAttribute('name', 'project-dueDate');
-    newProjectForm.appendChild(dueDateInput);
-
-    submitProjectBtn.setAttribute('type', 'button');
-    submitProjectBtn.innerHTML = 'Create New Project';
-    submitProjectBtn.setAttribute('id', 'createProject')
-    newProjectForm.appendChild(submitProjectBtn);
-
-    content.appendChild(newProjectForm);
-
-    //input fields to create to do task
-    
-    const newToDoForm = document.createElement('form');
-    const toDoTitleLabel = document.createElement('label');
-    const toDoTitleInput = document.createElement('input');
-    const projectSelectionLabel = document.createElement('label');
-    const projectSelections = document.createElement('select');
-    const projectOption1 = document.createElement('option');
-    const projectOption2 = document.createElement('option');
-    const submitToDoBtn = document.createElement('button');
-
-    newToDoForm.setAttribute('id', 'newToDoForm');
-
-    toDoTitleLabel.setAttribute('for', 'toDo-title');
-    toDoTitleLabel.innerHTML = 'To-Do Title';
-    newToDoForm.appendChild(toDoTitleLabel);
-
-    toDoTitleInput.setAttribute('type', 'text');
-    toDoTitleInput.setAttribute('id', 'toDo-title');
-    toDoTitleInput.setAttribute('name', 'toDo-title');
-    newToDoForm.appendChild(toDoTitleInput);
-
-    projectSelectionLabel.setAttribute('for', 'project-options');
-    projectSelectionLabel.innerHTML = 'Select a Project:';
-    newToDoForm.appendChild(projectSelectionLabel);
-
-    projectSelections.setAttribute('id', 'project-options');
-    projectSelections.setAttribute('name', 'project-options');
-    newToDoForm.appendChild(projectSelections);
-
-    projectOption1.setAttribute('value', '0');
-    projectOption1.innerHTML = 'Project 1';
-    projectSelections.appendChild(projectOption1);
-
-    projectOption2.setAttribute('value', '1');
-    projectOption2.innerHTML = 'Project 2';
-    projectSelections.appendChild(projectOption2);
-
-    submitToDoBtn.setAttribute('type', 'button');
-    submitToDoBtn.innerHTML = 'Create new To-Do';
-    submitToDoBtn.setAttribute('id', 'createToDo');
-    newToDoForm.appendChild(submitToDoBtn);
-
-    content.appendChild(newToDoForm);
-
+    toDoDisplay.setAttribute('id', 'toDoDisplay');
+    toDoDisplay.classList.add('toDoDisplay');
+    content.appendChild(toDoDisplay);
 
 })();
 
-export default {makePage}
+export default { HomePage }
