@@ -17,20 +17,23 @@ const createNewProject = document.getElementById('createProject');
 const createNewToDo = document.getElementById('createToDo');
 
 createNewProject.addEventListener('click', writeProject);
-createNewToDo.addEventListener('click', writeToDo)
+createNewToDo.addEventListener('click', writeToDo);
 
 function writeProject() {
     projects.Projects.addProjectToLibrary();
-    console.log(projects.Projects.projectLibrary);
+    projects.Projects.clearProjectLibrary();
+    projects.Projects.fillLibrary();
     document.getElementById('newProjectForm').reset();
     //remove to do form and rewrite with new project as option
     createForms.removeToDoForm();
     createForms.makeToDoForm();
+    const createNewToDo = document.getElementById('createToDo');
+    createNewToDo.addEventListener('click', writeToDo);
 }
 
 function writeToDo() {
     toDos.ToDos.addToDoToList();
-    console.log(projects.Projects.projectLibrary);
+    // toDos.ToDos.fillToDoLibrary();
     document.getElementById('newToDoForm').reset();
 }
 
